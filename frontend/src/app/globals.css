@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #041431;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #3e3e55;
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+.dark ::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #31313660;
+  border-radius: 4px;
+}
+
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: #5d5d8f #eaeef0;
+}
+
+.dark :root {
+  scrollbar-width: thin;
+  scrollbar-color: #141427 #ffffff00;
+}
+
+.dark .vulcan-sider {
+  scrollbar-color: #36364993 #ffffff00;
+}
+
+.vulcan-sider {
+  scrollbar-width: none;
+  scrollbar-color: #363649 #ffffff00;
+}
+
+.card-image-wrapper:hover .card-image {
+  transform: scale(1.2);
+}
+
+/* HTML: <div class="ribbon">Your text content</div> */
+.ribbon {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+.ribbon {
+  z-index: 30;
+  --f: 0.5rem; /* control the folded part */
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1.8;
+  padding-inline: 1lh;
+  padding-bottom: var(--f);
+  border-image: conic-gradient(#0008 0 0) 51% / var(--f);
+  clip-path: polygon(
+    100% calc(100% - var(--f)),
+    100% 100%,
+    calc(100% - var(--f)) calc(100% - var(--f)),
+    var(--f) calc(100% - var(--f)),
+    0 100%,
+    0 calc(100% - var(--f)),
+    999px calc(100% - var(--f) - 999px),
+    calc(100% - 999px) calc(100% - var(--f) - 999px)
+  );
+  transform: translate(calc((1 - cos(45deg)) * 100%), -100%) rotate(45deg);
+  transform-origin: 0% 100%;
+  background: linear-gradient(to right, #ff6363, #a80606);
+}
+
+
+.trapezoid{
+	/* clip-path: polygon(0% 100%, 17.5% 0%, 82.5% 0%, 100% 100%); */
+  clip-path: polygon(0% 100%, 0% 0%, 80% 0%, 100% 100%);
+}
+
+.ql-background, .ql-header, .ql-color-pickerm, .ql-color, .ql-font, .ql-size{
+  display: none!important;
+}
+.ql-formats {
+  margin-right: 0px!important;
+}
+.ql-toolbar{
+  border: 2px solid #E5EFFA!important;
+  border-bottom: none!important;
+  border-radius: 5px 5px 0px 0px ;
+  background-color: white;
+}
+.dark .ql-toolbar{
+  background-color: #1D1B39;
+  border-color: #1E203B!important;
+}
+.ql-container {
+  background-color: #F0F8FF;
+  border: 2px solid #E5EFFA!important;
+  border-top: none!important;
+  border-radius: 0px 0px 5px 5px;
+  min-height: 200px;
+  font-size: 14px!important;
+}
+.bio .ql-container {
+  min-height: 100px;
+}
+.dark .ql-container {
+  background-color: #020111;
+  border-color: #1E203B!important;
+}
+.ql-editor {
+  overflow-wrap: anywhere;
+}
+.ql-editor p, .ql-editor ol, .ql-editor ul, .ql-editor pre, .ql-editor blockquote, .ql-editor h1, .ql-editor h2, .ql-editor h3, .ql-editor h4, .ql-editor h5, .ql-editor h6 {
+  word-break: break-all!important;
+}
+
+.displayer .ql-editor {
+  padding: 0px;
+}
+
+.displayer .ql-container {
+  border: none!important;
+  background: transparent!important;
+  min-height: auto!important;
+  padding-left: 0px;
+}
+
+.displayer .ql-toolbar {
+  display: none;
+}
+
+.custom-select {
+  background-color: transparent;
+}
+
+.custom-select option {
+  background-color: black; /* This may not work in all browsers */
+  color: white;
+}
